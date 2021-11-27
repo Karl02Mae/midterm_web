@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './components/Home';
-import TopStudents from './components/TopStudents';
-import TopStudentCard from './components/TopStudentCard';
 
 function App() {
   return (
@@ -18,8 +16,6 @@ function App() {
 
           <Route path="/" >
             <Home />
-            <TopStudents />
-            <TopStudentCard />
           </Route>
 
 
