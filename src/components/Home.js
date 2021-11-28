@@ -10,6 +10,8 @@ import {
     IconButton, 
     Rating
 } from '@mui/material';
+
+import Header from "../components/Header";
 import StudentCardList from "../components/StudentCardList";
 
 // Icons
@@ -26,32 +28,25 @@ const style = {
         fontFamily: "Roboto",
     },
 
-// ****** HEADER ******
-    textHeader: {
-        paddingRight: "20px",
-        fontSize: "23px",
-        fontWeight: 700, 
+// ****** TOP STUDENT ******
+    topStudentContainer: {
+        padding: 5,
     },
-    tabReview: {
+    textTopStudent: {
         color: "white",
-        fontWeight: 600,
-        fontSize: "14px",
-        marginLeft: 5,
-        "&:hover": {
-            color: "#26CE8D",
-        },
-    },
-    search: {
-        background: "#131414",
-        border: "1px solid #2C2F31",
-        boxSizing: "border-box",
-        borderRadius: "8px",
-        width: 150,
+        fontSize: "18px",
+        lineHeight: "20px",
+        display: "flex",
+        alignItems: "center",
+        textAlign: "center",
+        marginLeft: 7.5,
+        marginBottom: 2,
     },
 
-// ****** TOP STUDENT ******
-    studentCardTop: {
-        display: "inline",
+// ****** STUDENT LIST ******
+
+    studentListContainer: {
+        
     },
 }
 
@@ -59,28 +54,16 @@ export default function Home() {
     const [studentcards, setStudentcards] = useState(STUDENT_CARDS);
     return (
         <Box sx={style.root}>
-            <AppBar position="static" sx={{backgroundColor: "#1E1F20"}}>
-                <Toolbar sx={{padding: 1}}>
-                    <Typography sx={style.textHeader}> Student Review </Typography>
+            <Header />
+            <Box sx={style.topStudentContainer}>
+                <Typography sx={style.textTopStudent}> Top Student </Typography>
+                <StudentCardList studentcards={studentcards} />
+            </Box>
 
-                    <GridIcon style={{height: 20, width: 30, marginRight: 75}}/>
+            <Box sx={style.studentListContainer}>
 
-                    <Link href="#" underline="none">
-                        <Typography sx={style.tabReview}> Student List </Typography>
-                    </Link>
-                    <Link href="#" underline="none">
-                        <Typography sx={style.tabReview}> Student Evaluation </Typography>
-                    </Link>
-                    <Link href="#" underline="none">
-                        <Typography sx={style.tabReview}> Blog </Typography>
-                    </Link>
-                    <ProfileIcon style={{height: 20, width: 30, marginLeft: 120}}/>
-                    <Box sx={style.search}>
-                        <SearchIcon  style={{height: 20, width: 30, marginTop: 5,}} />
-                    </Box>
-                </Toolbar>
-            </AppBar>
-            <StudentCardList sx={style.studentCardTop} studentcards={studentcards} />
+            </Box>
+            
         </Box>
     )
 }

@@ -42,12 +42,6 @@ export default function StudentCard({studentcard}) {
     return (
         <Box sx={style.root}>
             <Typography sx={style.name}>{studentcard.name}</Typography>
-            <Box
-                component="img"
-                src=""
-                alt="code2"
-                sx={style.image}
-            />
             <Typography>35 review</Typography>
             <Typography component="legend"></Typography>
             <Rating name="totalRate"
