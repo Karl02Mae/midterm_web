@@ -1,33 +1,28 @@
-import React, {useState} from "react";
-import { 
-    Box, 
-    AppBar, 
-    Toolbar, 
-    Link, 
-    Typography, 
-    Grid, 
-    Avatar, 
-    IconButton, 
+import React, { useState } from "react";
+import { ReactComponent as RoundedAvatar } from '../assets/svg/RoundProfile.svg';
+import {
+    Box,
+    Typography,
     Rating,
+    Avatar,
 } from "@mui/material";
 
 const style = {
     root: {
         display: "flex",
         marginTop: "5px",
-        flexDirection: "column",
+        flexDirection: "row",
         backgroundColor: "#1E1F20",
         alignItems: "center",
-        height: "120px",
-        width: "250px",
+        height: "111px",
+        width: "201px",
         color: "white",
-        marginLeft: "auto",
-        marginRight: "auto",
+        marginLeft: "14px",
+        marginRight: "14px",
         borderRadius: "10px",
         border: "2px solid #282828",
         justifyContent: "center",
-        marginLeft: "15px",
-        marginRight: "15px",
+        boxShadow: 5,
     },
     name: {
         fontWeight: "500",
@@ -37,19 +32,26 @@ const style = {
 
 }
 
-export default function StudentCard({studentcard}) {
-    const [value, setValue] = useState("");
+export default function StudentCard({ studentcard }) {
+    const [value, setValue] = useState(0);
     return (
         <Box sx={style.root}>
-            <Typography sx={style.name}>{studentcard.name}</Typography>
-            <Typography>35 review</Typography>
-            <Typography component="legend"></Typography>
-            <Rating name="totalRate"
-                value={value}
-                onChange={(event, newValue) => {
-                setValue(newValue);
-                }}
-            />
+            <Box sx={style.left}>
+                <Avatar sx={style.avatar} variant="rounded">
+                    <RoundedAvatar />
+                </Avatar>
+            </Box>
+            <Box sx={style.right}>
+                <Typography sx={style.name}>{studentcard.name}</Typography>
+                <Typography>{studentcard.Reviews} reviews</Typography>
+                <Typography component="legend"></Typography>
+                <Rating name="totalRate"
+                    value={value}
+                    onChange={(event, newValue) => {
+                        setValue(newValue);
+                    }}
+                />
+            </Box>
         </Box>
     );
 }
