@@ -27,6 +27,7 @@ const style = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        marginTop: 5,
     },
     stud__Profile__text: {
         display: 'flex',
@@ -42,12 +43,11 @@ const style = {
         fontWeight: '500',
         padding: 0.5,
     },
-    avatar: {
-        marginBottom: 1,
-    },
     stud__Details__name: {
         display: 'flex',
         alignItems: 'center',
+        paddingTop: 2,
+        paddingBottom: 2,
     },
     stud__Details__nameText: {
         fontSize: '24px',
@@ -105,6 +105,15 @@ const style = {
         fontSize: '12px',
         fontWeight: '400',
         paddingBottom: 1,
+    },
+    avatar: {
+        height: '100px',
+        width: '100px',
+        marginBottom: 1,
+    },
+    avatarInner: {
+        height: '95px',
+        width: '95px',
     }
 }
 
@@ -116,7 +125,7 @@ export default function IndividualStudent() {
         <Box sx={style.root} >
             <Box sx={style.stud__Profile} >
                 <Avatar sx={style.avatar} variant="rounded">
-                    <RoundedAvatar />
+                    <RoundedAvatar sx={style.avatarInner} />
                 </Avatar>
                 <Rating name="totalRate"
                     value={value}
