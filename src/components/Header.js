@@ -28,6 +28,7 @@ const style = {
         boxShadow: 10,
         zIndex: 99,
         top: 0,
+        maxWidth: '100vw',
     },
     left: {
         display: 'flex',

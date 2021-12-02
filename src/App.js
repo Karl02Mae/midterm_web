@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import IndividualStudentList from './components/IndividualStudentList';
 
 
 function App() {
@@ -19,11 +20,18 @@ function App() {
         <Header />
 
         <Switch>
+
+          <Route path="/student">
+            <IndividualStudentList />
+          </Route>
+
           <Route path="/" >
             <Home />
           </Route>
+
+
         </Switch>
-  
+
         <Footer />
 
       </Router>
