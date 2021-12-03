@@ -17,7 +17,7 @@ const style = {
         border: '1px solid #303336',
         borderRadius: '10px',
         maxWidth: '916px',
-        height: '244px',
+        height: '260px',
         marginTop: '100px',
         marginLeft: 'auto',
         marginRight: 'auto',
