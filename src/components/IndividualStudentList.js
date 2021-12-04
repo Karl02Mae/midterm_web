@@ -9,6 +9,7 @@ import {
 
 import IndividualStudent from './IndividualStudent';
 import CommentBox from './CommentBox';
+import RatingBox from './RatingBox';
 
 const style = {
     root: {
@@ -92,6 +93,7 @@ export default function IndividualStudentList() {
                         setValue(newValue);
                     }}
                 />
+                <RatingBox />
             </Box>
             <Box sx={style.commentSection}>
                 <Box sx={style.sortfiltContainer}>
