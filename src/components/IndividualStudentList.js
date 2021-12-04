@@ -40,7 +40,7 @@ const style = {
     },
     sortSelect: {
         display: 'flex',
-        color: 'white',
+        color: '#D1D4C9',
         borderRadius: 2,
         border: "2px solid #282828",
         fontWeight: "500",
@@ -53,7 +53,7 @@ const style = {
     },
     filtSelect: {
         display: 'flex',
-        color: 'white',
+        color: '#D1D4C9',
         borderRadius: 2,
         border: "2px solid #282828",
         fontWeight: "500",

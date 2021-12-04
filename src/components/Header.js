@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Box,
     AppBar,
@@ -8,6 +8,8 @@ import {
     Input,
     InputAdornment,
 } from '@mui/material';
+
+import LoginModal from './LoginModal';
 
 
 // Icons
@@ -59,7 +61,7 @@ const style = {
         },
     },
     searchBar: {
-        color: "white",
+        color: '#D1D4C9',
         background: "#131414",
         border: "1px solid #2C2F31",
         boxSizing: "border-box",
@@ -76,17 +78,20 @@ const style = {
     profIcon: {
         height: '20px',
         width: '20px',
+        '&:hover': {
+            cursor: 'pointer',
+        }
     },
 }
 
 export default function Header() {
+    const [show, setShow] = useState(false);
     return (
         <Box sx={style.root}>
             <AppBar position="static" sx={{ backgroundColor: "#1E1F20" }}>
                 <Toolbar sx={style.container}>
                     <Box sx={style.left}>
                         <Typography sx={style.textHeader}> Student Review </Typography>
-
                         <GridIcon style={{ height: 20, width: 30 }} />
                     </Box>
 
@@ -103,7 +108,7 @@ export default function Header() {
                     </Box>
 
                     <Box sx={style.right}>
-                        <ProfileIcon sx={style.profIcon} />
+                        <ProfileIcon sx={style.profIcon} onClick={() => setShow(true)} />
                         <Input sx={style.searchBar} id="searchBar"
                             startAdornment={
                                 <InputAdornment position="start">
@@ -113,6 +118,9 @@ export default function Header() {
                     </Box>
                 </Toolbar>
             </AppBar>
+            <Box sx={style.modal}>
+                <LoginModal onClose={() => setShow(false)} show={show} />
+            </Box>
         </Box>
     )
 }

@@ -4,16 +4,9 @@ import {
     Typography
 } from '@mui/material';
 
-// import Header from "../components/Header";
 import StudentCardList from "../components/StudentCardList";
 import StudentList from './StudentList';
 
-// Icons
-// import SearchIcon from '@mui/icons-material/Search';
-
-// SVG Icons
-// import {ReactComponent as GridIcon} from "../assets/svg/Grid.svg";
-// import {ReactComponent as ProfileIcon} from "../assets/svg/Profile.svg";
 
 
 const style = {
@@ -33,7 +26,7 @@ const style = {
         marginRight: 'auto',
     },
     textTopStudent: {
-        color: "white",
+        color: '#D1D4C9',
         fontSize: "18px",
         lineHeight: "20px",
         display: "flex",
@@ -57,7 +50,6 @@ export default function Home() {
     console.log(setFullStudentCards);
     return (
         <Box sx={style.root}>
-            {/* <Header /> */}
             <Box sx={style.topStudentContainer}>
                 <Typography sx={style.textTopStudent}> Top Student </Typography>
                 <StudentCardList studentcards={studentcards} />

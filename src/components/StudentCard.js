@@ -16,7 +16,7 @@ const style = {
         alignItems: "center",
         height: "111px",
         width: "201px",
-        color: "white",
+        color: '#D1D4C9',
         marginLeft: "14px",
         marginRight: "14px",
         borderRadius: "10px",
