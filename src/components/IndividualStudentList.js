@@ -6,10 +6,27 @@ import {
     Select,
     MenuItem
 } from '@mui/material';
+import { Helmet } from 'react-helmet';
 
 import IndividualStudent from './IndividualStudent';
 import CommentBox from './CommentBox';
 import RatingBox from './RatingBox';
+
+<Helmet>
+    <title>Student Review - Student Evaluation </title>
+    <meta
+        name="description"
+        content="You're currently viewing the Student Evaluation page."
+    />
+    <meta
+        name="keywords"
+        content="Student Evaluation, Ratings, Comments"
+    />
+    <meta
+        property="og:title"
+        content="Student Review-Student Evaluation"
+    />
+</Helmet>
 
 const style = {
     root: {
