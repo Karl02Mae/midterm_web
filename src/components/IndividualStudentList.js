@@ -90,7 +90,7 @@ export default function IndividualStudentList() {
                     content="You're currently viewing the Student Evaluation page."
                 />
                 <meta
-                    name="og:description"
+                    property="og:description"
                     content="You're currently viewing the Student Evaluation page."
                 />
                 <meta

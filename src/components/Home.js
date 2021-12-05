@@ -57,7 +57,7 @@ export default function Home() {
                     content="You're currently viewing the Student List page."
                 />
                 <meta
-                    name="og:description"
+                    property="og:description"
                     content="You're currently viewing the Student Evaluation page."
                 />
                 <meta
