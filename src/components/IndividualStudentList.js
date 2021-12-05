@@ -79,7 +79,7 @@ const style = {
 
 export default function IndividualStudentList() {
     const [value, setValue] = useState('');
- 
+
     return (
         <Box sx={style.root}>
 
@@ -87,6 +87,10 @@ export default function IndividualStudentList() {
                 <title>Student Review - Student Evaluation </title>
                 <meta
                     name="description"
+                    content="You're currently viewing the Student Evaluation page."
+                />
+                <meta
+                    name="og:description"
                     content="You're currently viewing the Student Evaluation page."
                 />
                 <meta
@@ -113,8 +117,8 @@ export default function IndividualStudentList() {
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}
-                    sx={{color: "#26CE8D"}}
-                    readOnly 
+                    sx={{ color: "#26CE8D" }}
+                    readOnly
                 />
             </Box>
             <RatingBox />

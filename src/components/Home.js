@@ -57,6 +57,10 @@ export default function Home() {
                     content="You're currently viewing the Student List page."
                 />
                 <meta
+                    name="og:description"
+                    content="You're currently viewing the Student Evaluation page."
+                />
+                <meta
                     name="keywords"
                     content="Student Review, Feedback, Student List"
                 />
@@ -87,7 +91,7 @@ export default function Home() {
 
 
 const STUDENT_INFOS = [
-    
+
     {
         id: 1,
         name: 'Karl Samelo',
@@ -141,7 +145,7 @@ const STUDENT_INFOS = [
 ]
 
 const STUDENT_INFO = [
-    
+
     {
         id: 1,
         name: 'Karl Samelo',
@@ -163,7 +167,7 @@ const STUDENT_INFO = [
         skills: '',
         rating: 4.5,
         reviews: 30,
-        
+
     },
     {
         id: 3,
