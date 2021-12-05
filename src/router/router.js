@@ -14,7 +14,7 @@ export default function RouterComponent() {
             <Header />
             <Switch>
                 <Route component={Home} path="/" exact/>
-                <Route component={StudentEvaluation} path="/student-evaluation" />
+                <Route component={StudentEvaluation} path="/studentevaluation" />
             </Switch>
             <Footer />
         </Router>
