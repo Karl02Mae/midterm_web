@@ -83,7 +83,7 @@ export default function StudentListCard({ fullStudentCards }) {
                         <RoundedAvatar />
                     </Avatar>
                 </Box>
-                <Link href="/student-evaluation" underline="none">
+                <Link href="/studentevaluation" underline="none">
                     <Typography sx={style.name}>{fullStudentCards.name}</Typography>
                 </Link>
             </Box>
