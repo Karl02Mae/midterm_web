@@ -2,22 +2,21 @@ import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from "../components/Home";
-
-//import theme  from "../utils/theme";
-
-//import {useSelector} from "react-redux";
+import Header from '../components/Header';
+import Home from '../components/Home';
+import Footer from '../components/Footer';
+import StudentEvaluation from '../components/IndividualStudentList';
 
 export default function RouterComponent() {
 
-    //const ui = useSelector((state) => state.ui);
-    //const THEME = createTheme(theme(ui.isDarkMode));
-
     return (
         <Router>
+            <Header />
             <Switch>
-                <Route  component={Home} path="/" />
+                <Route component={Home} path="/" exact/>
+                <Route component={StudentEvaluation} path="/student-evaluation" />
             </Switch>
+            <Footer />
         </Router>
     )
 }

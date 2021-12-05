@@ -29,6 +29,9 @@ const style = {
         fontSize: "14px",
         lineHeight: "20px",
     },
+    avatar: {
+        marginRight: "10px",
+    }
 
 }
 
@@ -43,13 +46,15 @@ export default function StudentCard({ studentcard }) {
             </Box>
             <Box sx={style.right}>
                 <Typography sx={style.name}>{studentcard.name}</Typography>
-                <Typography>{studentcard.Reviews} reviews</Typography>
+                <Typography>{studentcard.reviews} reviews</Typography>
                 <Typography component="legend"></Typography>
                 <Rating name="totalRate"
-                    value={value}
+                    value={studentcard.rating}
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}
+                    sx={{color: "#26CE8D"}}
+                    precision={0.5}
                 />
             </Box>
         </Box>

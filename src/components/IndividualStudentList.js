@@ -25,6 +25,7 @@ const style = {
     },
     addRating: {
         marginTop: 5,
+        marginLeft: 73,
     },
     addYourRating: {
         fontSize: '24px',
@@ -78,6 +79,7 @@ const style = {
 
 export default function IndividualStudentList() {
     const [value, setValue] = useState('');
+ 
     return (
         <Box sx={style.root}>
 
@@ -105,14 +107,17 @@ export default function IndividualStudentList() {
                     Add your rating
                 </Typography>
                 <Rating name="addRate"
+                    name="readOnly"
                     value={value}
                     size="large"
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}
+                    sx={{color: "#26CE8D"}}
+                    readOnly 
                 />
-                <RatingBox />
             </Box>
+            <RatingBox />
             <Box sx={style.commentSection}>
                 <Box sx={style.sortfiltContainer}>
                     <Typography sx={style.sortText}>

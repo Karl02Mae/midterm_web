@@ -1,7 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-
+import studentInfoReducer from "./reducers/studentInfoReducer";
+import addCommentReducer from "./reducers/addCommentReducer";
 
 
 
@@ -10,6 +11,8 @@ const initialState = {};
 const middleware = [thunk];
 
 const reducers = combineReducers({
+    info: studentInfoReducer,
+    comment: addCommentReducer,
 });
 
 

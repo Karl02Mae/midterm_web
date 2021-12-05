@@ -7,6 +7,9 @@ import {
     TextField
 } from '@mui/material';
 
+import { useDispatch } from "react-redux";
+import { review } from "../redux/actions/setReviewAction";
+
 const style = {
     root: {
         display: 'flex',
@@ -27,6 +30,7 @@ const style = {
         fontWeight: '400',
         paddingTop: 3,
         paddingBottom: 3,
+        marginLeft: 22,
     },
     text: {
         display: 'flex',
@@ -50,6 +54,7 @@ const style = {
     },
     ratings: {
         marginBottom: 2,
+        color: "#26CE8D",
 
     },
     comment: {
@@ -71,6 +76,7 @@ const style = {
         paddingBottom: 2,
         fontSize: '14px',
         fontWeight: '400',
+        marginLeft: 16,
     },
     submit: {
         backgroundColor: '#26CE8D',
@@ -89,11 +95,23 @@ const style = {
 }
 
 export default function RatingBox() {
-    const [value1, setValue1] = useState('');
-    const [value2, setValue2] = useState('');
-    const [value3, setValue3] = useState('');
-    const [value4, setValue4] = useState('');
-    const [value5, setValue5] = useState('');
+    const dispatch = useDispatch();
+    const [value1, setValue1] = useState({
+        value1: 0,
+    });
+    const [value2, setValue2] = useState({
+        value2: 0,
+    });
+    const [value3, setValue3] = useState({
+        value3: 0,
+    });
+    const [value4, setValue4] = useState({
+        value4: 0,
+    });
+    const [value5, setValue5] = useState({
+        value5: 0,
+    });
+
     return (
         <Box sx={style.root}>
             <Typography sx={style.ratingText}>

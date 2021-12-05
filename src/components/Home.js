@@ -43,8 +43,8 @@ const style = {
 }
 
 export default function Home() {
-    const [studentcards, setStudentcards] = useState(TOP_STUDENT_CARDS);
-    const [fullStudentCards, setFullStudentCards] = useState(FULL_STUDENT_CARDS);
+    const [studentcards, setStudentcards] = useState(STUDENT_INFO);
+    const [fullStudentCards, setFullStudentCards] = useState(STUDENT_INFOS);
     console.log(setStudentcards);
     console.log(setFullStudentCards);
     return (
@@ -85,105 +85,106 @@ export default function Home() {
     )
 }
 
-const TOP_STUDENT_CARDS = [
-    {
-        id: 1,
-        img: '../assets/img/aldrin.png',
-        name: 'Karl Samelo',
-        Gender: 'Male',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
-    },
-    {
-        id: 2,
-        name: 'Sara Patatas',
-        Gender: 'Female',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
-    },
-    {
-        id: 3,
-        name: 'Arriane Baredo',
-        Gender: 'Female',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
-    },
-    {
-        id: 4,
-        name: 'Junnie Adriano',
-        Gender: 'Male',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
-    },
-]
 
-const FULL_STUDENT_CARDS = [
+const STUDENT_INFOS = [
+    
     {
         id: 1,
-        img: '../assets/img/aldrin.png',
         name: 'Karl Samelo',
-        YnS: 'BSIT - 4A',
-        Gender: 'Male',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
+        gender: 'Male',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        reviews: 35,
     },
     {
         id: 2,
         name: 'Sara Patatas',
-        YnS: 'BSIT - 4A',
-        Gender: 'Female',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
+        gender: 'Female',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        reviews: 36,
     },
     {
         id: 3,
         name: 'Arriane Baredo',
-        YnS: 'BSIT - 4A',
-        Gender: 'Female',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
+        gender: 'Female',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        reviews: 33,
     },
     {
         id: 4,
         name: 'Junnie Adriano',
-        YnS: 'BSIT - 4A',
-        Gender: 'Male',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
+        gender: 'Male',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        reviews: 45,
     },
     {
         id: 5,
-        name: 'Russel May Limas',
-        YnS: 'BSIT - 4A',
-        Gender: 'Female',
-        Birthday: '',
-        Address: '',
-        Nickname: '',
-        Skills: '',
-        Reviews: 0,
+        name: 'Mae Limas',
+        gender: 'Female',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        reviews: 38,
+    },
+]
+
+const STUDENT_INFO = [
+    
+    {
+        id: 1,
+        name: 'Karl Samelo',
+        gender: 'Male',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        rating: 3.5,
+        reviews: 25,
+    },
+    {
+        id: 2,
+        name: 'Junnie Adriano',
+        gender: 'Male',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        rating: 4.5,
+        reviews: 30,
+        
+    },
+    {
+        id: 3,
+        name: 'Arriane Baredo',
+        gender: 'Female',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        rating: 3.0,
+        reviews: 22,
+    },
+    {
+        id: 4,
+        name: 'Sara Patatas',
+        gender: 'Female',
+        birthday: '',
+        address: '',
+        nickname: '',
+        skills: '',
+        rating: 3.0,
+        reviews: 20,
     },
 ]

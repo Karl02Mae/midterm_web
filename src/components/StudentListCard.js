@@ -5,6 +5,7 @@ import {
     Typography,
     Rating,
     Avatar,
+    Link,
 } from "@mui/material";
 
 const style = {
@@ -34,6 +35,7 @@ const style = {
         fontSize: '18px',
         fontWeight: '400',
         paddingLeft: 1,
+        color: "white"
     },
     left: {
         display: 'flex',
@@ -80,16 +82,19 @@ export default function StudentListCard({ fullStudentCards }) {
                         <RoundedAvatar />
                     </Avatar>
                 </Box>
-                <Typography sx={style.name}>{fullStudentCards.name}</Typography>
+                <Link href="/student-evaluation" underline="none">
+                    <Typography sx={style.name}>{fullStudentCards.name}</Typography>
+                </Link>
             </Box>
             <Box sx={style.right}>
-                <Typography sx={style.YnS}>{fullStudentCards.YnS}</Typography>
-                <Typography sx={style.reviews}>{fullStudentCards.Reviews}</Typography>
+                <Typography sx={style.YnS}>{fullStudentCards.yns}</Typography>
+                <Typography sx={style.reviews}>{fullStudentCards.reviews}</Typography>
                 <Rating sx={style.ratings} name="totalRate"
                     value={value}
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}
+                    sx={{color: "#26CE8D"}}
                 />
             </Box>
         </Box>
