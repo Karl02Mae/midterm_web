@@ -116,11 +116,11 @@ export default function Comment(props) {
                 <Box sx={style.commentList}>
                     <Box sx={style.top}>
                         <ReplyIcon />
-                        <Typography sx={style.text}>username</Typography>
+                        <Typography sx={style.text}>username</Typography> {/* put the username data here from login */}
                         <Typography sx={style.text}>3 hrs ago</Typography>
                     </Box>
                     <Box sx={style.down}>
-                        <Typography sx={style.Comments}>{commentList}</Typography>
+                        <Typography sx={style.Comments}>{commentList}</Typography> {/* map the commentList array */}
                     </Box>
                 </Box>
             </Box>
