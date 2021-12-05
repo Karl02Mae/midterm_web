@@ -88,18 +88,22 @@ export default function IndividualStudentList() {
                 <meta
                     name="description"
                     content="You're currently viewing the Student Evaluation page."
+                    data-react-helmet="true"
                 />
                 <meta
                     property="og:description"
                     content="You're currently viewing the Student Evaluation page."
+                    data-react-helmet="true"
                 />
                 <meta
                     name="keywords"
                     content="Student Evaluation, Ratings, Comments"
+                    data-react-helmet="true"
                 />
                 <meta
                     property="og:title"
                     content="Student Review-Student Evaluation"
+                    data-react-helmet="true"
                 />
             </Helmet>
 
