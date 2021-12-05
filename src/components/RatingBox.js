@@ -7,8 +7,8 @@ import {
     TextField
 } from '@mui/material';
 
-import { useDispatch } from "react-redux";
-import { review } from "../redux/actions/setReviewAction";
+//import { useDispatch } from "react-redux";
+//import { review } from "../redux/actions/setReviewAction";
 
 const style = {
     root: {
@@ -95,7 +95,7 @@ const style = {
 }
 
 export default function RatingBox() {
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
     const [value1, setValue1] = useState({
         value1: 0,
     });

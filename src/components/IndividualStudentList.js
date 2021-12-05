@@ -106,7 +106,7 @@ export default function IndividualStudentList() {
                 <Typography sx={style.addYourRating}>
                     Add your rating
                 </Typography>
-                <Rating name="addRate"
+                <Rating
                     name="readOnly"
                     value={value}
                     size="large"

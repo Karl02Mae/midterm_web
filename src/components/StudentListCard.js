@@ -52,6 +52,7 @@ const style = {
     ratings: {
         paddingRight: 3,
         size: 'large',
+        color: "#26CE8D"
     },
     reviews: {
         paddingRight: 3,
@@ -94,7 +95,6 @@ export default function StudentListCard({ fullStudentCards }) {
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}
-                    sx={{color: "#26CE8D"}}
                 />
             </Box>
         </Box>

@@ -53,9 +53,10 @@ export default function StudentCard({ studentcard }) {
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}
-                    sx={{color: "#26CE8D"}}
+                    sx={{ color: "#26CE8D" }}
                     precision={0.5}
                 />
+                {console.log(value)}
             </Box>
         </Box>
     );
