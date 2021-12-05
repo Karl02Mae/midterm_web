@@ -12,22 +12,6 @@ import IndividualStudent from './IndividualStudent';
 import CommentBox from './CommentBox';
 import RatingBox from './RatingBox';
 
-<Helmet>
-    <title>Student Review - Student Evaluation </title>
-    <meta
-        name="description"
-        content="You're currently viewing the Student Evaluation page."
-    />
-    <meta
-        name="keywords"
-        content="Student Evaluation, Ratings, Comments"
-    />
-    <meta
-        property="og:title"
-        content="Student Review-Student Evaluation"
-    />
-</Helmet>
-
 const style = {
     root: {
         display: 'flex',
@@ -96,6 +80,23 @@ export default function IndividualStudentList() {
     const [value, setValue] = useState('');
     return (
         <Box sx={style.root}>
+
+            <Helmet>
+                <title>Student Review - Student Evaluation </title>
+                <meta
+                    name="description"
+                    content="You're currently viewing the Student Evaluation page."
+                />
+                <meta
+                    name="keywords"
+                    content="Student Evaluation, Ratings, Comments"
+                />
+                <meta
+                    property="og:title"
+                    content="Student Review-Student Evaluation"
+                />
+            </Helmet>
+
             <Box sx={style.top}>
                 <IndividualStudent />
             </Box>

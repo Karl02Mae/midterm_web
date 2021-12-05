@@ -96,10 +96,10 @@ export default function Header() {
                     </Box>
 
                     <Box sx={style.mid} >
-                        <Link href="#" underline="none">
+                        <Link href="/" underline="none">
                             <Typography sx={style.tabReview}> Student List </Typography>
                         </Link>
-                        <Link href="#" underline="none">
+                        <Link href="/evaluation" underline="none">
                             <Typography sx={style.tabReview}> Student Evaluation </Typography>
                         </Link>
                         <Link href="#" underline="none">

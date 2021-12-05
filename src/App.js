@@ -21,7 +21,7 @@ function App() {
 
         <Switch>
 
-          <Route path="/student">
+          <Route path="/evaluation">
             <IndividualStudentList />
           </Route>
 

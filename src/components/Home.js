@@ -8,22 +8,6 @@ import { Helmet } from 'react-helmet';
 import StudentCardList from "../components/StudentCardList";
 import StudentList from './StudentList';
 
-<Helmet>
-    <title>Student Review - Student List </title>
-    <meta
-        name="description"
-        content="You're currently viewing the Student List page."
-    />
-    <meta
-        name="keywords"
-        content="Student Review, Feedback, Student List"
-    />
-    <meta
-        property="og:title"
-        content="Student Review-Student List"
-    />
-</Helmet>
-
 const style = {
     root: {
         backgroundColor: "#131414",
@@ -65,6 +49,23 @@ export default function Home() {
     console.log(setFullStudentCards);
     return (
         <Box sx={style.root}>
+
+            <Helmet>
+                <title>Student Review - Student List </title>
+                <meta
+                    name="description"
+                    content="You're currently viewing the Student List page."
+                />
+                <meta
+                    name="keywords"
+                    content="Student Review, Feedback, Student List"
+                />
+                <meta
+                    property="og:title"
+                    content="Student Review-Student List"
+                />
+            </Helmet>
+
             <Box sx={style.topStudentContainer}>
                 <Typography sx={style.textTopStudent}> Top Student </Typography>
                 <StudentCardList studentcards={studentcards} />
