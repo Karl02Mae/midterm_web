@@ -17,7 +17,7 @@ const style = {
         display: 'flex',
         flexDirection: 'column',
         color: '#D1D4C9',
-        height: '200vh',
+        // height: '300vh',
         backgroundColor: "#131414",
         fontFamily: 'roboto',
         paddingLeft: 5,

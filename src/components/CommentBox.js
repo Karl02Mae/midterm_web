@@ -7,18 +7,20 @@ import {
 } from '@mui/material';
 import ReportGmailerrorredRoundedIcon from '@mui/icons-material/ReportGmailerrorredRounded';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import Comment from './Comment';
 
 const style = {
     root: {
         display: 'flex',
         flexDirection: 'column',
-        height: '214px',
+        // height: '214px',
         width: '926px',
         backgroundColor: '#1E1F20',
         border: 'solid 1px #303336',
         borderRadius: '10px',
         marginLeft: 'auto',
         marginRight: 'auto',
+        marginBottom: '200px',
         color: '#D1D4C9',
     },
     top: {
@@ -61,8 +63,17 @@ const style = {
         marginLeft: 3,
     },
     down: {
+        display: 'flex',
+        flexDirection: 'column',
         marginTop: 2,
         marginRight: 5,
+        paddingBottom: 3,
+    },
+    commentButton__text: {
+        cursor: 'pointer',
+        '&:hover': {
+            color: "#26CE8D",
+        }
     },
     comment: {
         fontSize: '12px',
@@ -74,11 +85,18 @@ const style = {
         display: 'flex',
         flexDirection: 'column',
         textAlign: 'left',
+    },
+    comments: {
+        display: 'flex',
+    },
+    butCon: {
+        float: 'right',
     }
 }
 
 export default function CommentBox() {
     const [value, setValue] = useState('');
+    const [show, setShow] = useState(false);
     return (
         <Box sx={style.root}>
             {/* Data from COMMENT BOX should be replaced by data from array */}
@@ -107,20 +125,26 @@ export default function CommentBox() {
                     </Typography>
                 </Box>
                 <Box sx={style.down}>
-                    <Box sx={style.buttons}>
-                        <Box sx={style.commentButton}>
-                            <ChatBubbleOutlineIcon />
-                            <Typography sx={style.commentButton__text}>
-                                Comment
-                            </Typography>
+                    <Box sx={style.butCon}>
+                        <Box sx={style.buttons}>
+                            <Box sx={style.commentButton}>
+                                <ChatBubbleOutlineIcon />
+                                <Typography onClick={() => setShow(true)} sx={style.commentButton__text}>
+                                    Comment
+                                </Typography>
+                            </Box>
+                            <Box sx={style.reportButton}>
+                                <ReportGmailerrorredRoundedIcon />
+                                <Typography sx={style.reportButton__text}>
+                                    Report
+                                </Typography>
+                            </Box>
                         </Box>
-                        <Box sx={style.reportButton}>
-                            <ReportGmailerrorredRoundedIcon />
-                            <Typography sx={style.reportButton__text}>
-                                Report
-                            </Typography>
-                        </Box>
-                    </Box></Box>
+                    </Box>
+                    <Box sx={style.comments}>
+                        <Comment onClose={() => setShow(false)} show={show} />
+                    </Box>
+                </Box>
             </Box>
         </Box>
     )
