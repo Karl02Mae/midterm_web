@@ -97,6 +97,13 @@ const style = {
 export default function CommentBox() {
     const [value, setValue] = useState('');
     const [show, setShow] = useState(false);
+    const handleModal = () => {
+        if (show === true) {
+            setShow(false);
+        } else if (show === false) {
+            setShow(true);
+        }
+    }
     return (
         <Box sx={style.root}>
             {/* Data from COMMENT BOX should be replaced by data from array */}
@@ -129,7 +136,7 @@ export default function CommentBox() {
                         <Box sx={style.buttons}>
                             <Box sx={style.commentButton}>
                                 <ChatBubbleOutlineIcon />
-                                <Typography onClick={() => setShow(true)} sx={style.commentButton__text}>
+                                <Typography onClick={handleModal} sx={style.commentButton__text}>
                                     Comment
                                 </Typography>
                             </Box>
