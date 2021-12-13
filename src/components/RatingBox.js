@@ -94,7 +94,9 @@ const style = {
     }
 }
 
-export default function RatingBox() {
+export default function RatingBox(props) {
+
+
     //const dispatch = useDispatch();
     const [value1, setValue1] = useState({
         value1: 0,
@@ -111,6 +113,10 @@ export default function RatingBox() {
     const [value5, setValue5] = useState({
         value5: 0,
     });
+
+    if (props.show === false) {
+        return null
+    }
 
     return (
         <Box sx={style.root}>
@@ -187,7 +193,7 @@ export default function RatingBox() {
                     variant="standard"
                     InputProps={{ disableUnderline: true }}
                 />
-                <Button sx={style.submit}>Submit</Button>
+                <Button sx={style.submit} onClick={props.onClose}>Submit</Button>
             </Box>
         </Box>
     )

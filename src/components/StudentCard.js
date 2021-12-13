@@ -55,6 +55,7 @@ export default function StudentCard({ studentcard }) {
                     }}
                     sx={{ color: "#26CE8D" }}
                     precision={0.5}
+                    readOnly
                 />
                 {console.log(value)}
             </Box>

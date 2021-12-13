@@ -99,6 +99,7 @@ const STUDENT_INFOS = [
     {
         id: 1,
         name: 'Karl Samelo',
+        yns: 'BSIT4A',
         gender: 'Male',
         birthday: '',
         address: '',
@@ -109,6 +110,7 @@ const STUDENT_INFOS = [
     {
         id: 2,
         name: 'Sara Patatas',
+        yns: 'BSIT4A',
         gender: 'Female',
         birthday: '',
         address: '',
@@ -119,6 +121,7 @@ const STUDENT_INFOS = [
     {
         id: 3,
         name: 'Arriane Baredo',
+        yns: 'BSIT4A',
         gender: 'Female',
         birthday: '',
         address: '',
@@ -129,6 +132,7 @@ const STUDENT_INFOS = [
     {
         id: 4,
         name: 'Junnie Adriano',
+        yns: 'BSIT4A',
         gender: 'Male',
         birthday: '',
         address: '',
@@ -139,6 +143,7 @@ const STUDENT_INFOS = [
     {
         id: 5,
         name: 'Mae Limas',
+        yns: 'BSIT4A',
         gender: 'Female',
         birthday: '',
         address: '',
@@ -153,6 +158,7 @@ const STUDENT_INFO = [
     {
         id: 1,
         name: 'Karl Samelo',
+        yns: 'BSIT4A',
         gender: 'Male',
         birthday: '',
         address: '',
@@ -164,6 +170,7 @@ const STUDENT_INFO = [
     {
         id: 2,
         name: 'Junnie Adriano',
+        yns: 'BSIT4A',
         gender: 'Male',
         birthday: '',
         address: '',
@@ -176,6 +183,7 @@ const STUDENT_INFO = [
     {
         id: 3,
         name: 'Arriane Baredo',
+        yns: 'BSIT4A',
         gender: 'Female',
         birthday: '',
         address: '',
@@ -187,6 +195,7 @@ const STUDENT_INFO = [
     {
         id: 4,
         name: 'Sara Patatas',
+        yns: 'BSIT4A',
         gender: 'Female',
         birthday: '',
         address: '',

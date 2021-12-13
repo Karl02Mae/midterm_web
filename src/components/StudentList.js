@@ -10,12 +10,18 @@ import StudentListCard from './StudentListCard';
 const style = {
     root: {
         display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+    },
+    root2: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     sortFilt: {
         display: 'flex',
-        position: 'absolute',
-        right: 0,
-        marginRight: '240px',
+        marginLeft: 55,
     },
     sortCont: {
         display: 'flex',
@@ -67,12 +73,16 @@ const style = {
         width: '100px',
     },
     StudentListContainer: {
-        marginTop: 15,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        marginRight: 10,
+        marginTop: 5,
     },
     label: {
         display: 'flex',
         flexDirection: 'row',
-        paddingLeft: 74,
+        paddingLeft: 50,
         paddingBottom: 3,
     },
     labelYnS: {
@@ -97,42 +107,44 @@ const style = {
 export default function StudentList({ fullStudentCards }) {
     return (
         <Box sx={style.root}>
-            <Box sx={style.sortFilt}>
-                <Box sx={style.sortCont} >
-                    <Typography sx={style.sortText}>Sort by:</Typography>
-                    <Select sx={style.sortSelect}
-                        labelId='sortBy'
-                        id='sortBy'
-                        placeholder='Most Recent'
-                        onChange={''}
-                        value='Most Recent'
-                    >
-                        <MenuItem value='Most Recent'>Most Recent</MenuItem>
-                        <MenuItem value='Name'>Name</MenuItem>
-                    </Select>
+            <Box sx={style.root2}>
+                <Box sx={style.sortFilt}>
+                    <Box sx={style.sortCont} >
+                        <Typography sx={style.sortText}>Sort by:</Typography>
+                        <Select sx={style.sortSelect}
+                            labelId='sortBy'
+                            id='sortBy'
+                            placeholder='Most Recent'
+                            onChange={''}
+                            value='Most Recent'
+                        >
+                            <MenuItem value='Most Recent'>Most Recent</MenuItem>
+                            <MenuItem value='Name'>Name</MenuItem>
+                        </Select>
+                    </Box>
+
+                    <Box sx={style.filterCont} >
+                        <Typography sx={style.filterText}>Filter by: </Typography>
+                        <Select sx={style.filterSelect}
+                            labelId='filterBy'
+                            id='filterBy'
+                            value='No Filter'
+                        >
+                            <MenuItem value='No Filter'>No Filter</MenuItem>
+                        </Select>
+                    </Box>
                 </Box>
 
-                <Box sx={style.filterCont} >
-                    <Typography sx={style.filterText}>Filter by: </Typography>
-                    <Select sx={style.filterSelect}
-                        labelId='filterBy'
-                        id='filterBy'
-                        value='No Filter'
-                    >
-                        <MenuItem value='No Filter'>No Filter</MenuItem>
-                    </Select>
+                <Box sx={style.StudentListContainer}>
+                    <Box sx={style.label}>
+                        <Typography sx={style.labelYnS}>Year and Section</Typography>
+                        <Typography sx={style.labelReviews}>Reviews</Typography>
+                        <Typography sx={style.labelRatings}>Ratings</Typography>
+                    </Box>
+                    {fullStudentCards.map(fullStudentCards => {
+                        return <StudentListCard fullStudentCards={fullStudentCards} key={fullStudentCards.id} />
+                    })}
                 </Box>
-            </Box>
-
-            <Box sx={style.StudentListContainer}>
-                <Box sx={style.label}>
-                    <Typography sx={style.labelYnS}>Year and Section</Typography>
-                    <Typography sx={style.labelReviews}>Reviews</Typography>
-                    <Typography sx={style.labelRatings}>Ratings</Typography>
-                </Box>
-                {fullStudentCards.map(fullStudentCards => {
-                    return <StudentListCard fullStudentCards={fullStudentCards} key={fullStudentCards.id} />
-                })}
             </Box>
         </Box>
     )

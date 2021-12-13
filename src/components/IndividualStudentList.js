@@ -79,6 +79,7 @@ const style = {
 
 export default function IndividualStudentList() {
     const [value, setValue] = useState('');
+    const [show, setShow] = useState(false);
 
     return (
         <Box sx={style.root}>
@@ -115,17 +116,16 @@ export default function IndividualStudentList() {
                     Add your rating
                 </Typography>
                 <Rating
-                    name="readOnly"
                     value={value}
                     size="large"
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}
+                    onClick={() => setShow(true)}
                     sx={{ color: "#26CE8D" }}
-                    readOnly
                 />
             </Box>
-            <RatingBox />
+            <RatingBox onClose={() => setShow(false)} show={show} />
             <Box sx={style.commentSection}>
                 <Box sx={style.sortfiltContainer}>
                     <Typography sx={style.sortText}>
