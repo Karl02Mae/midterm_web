@@ -54,7 +54,7 @@ export default function Home() {
             setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         } 
         getStudent();
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 
     return (

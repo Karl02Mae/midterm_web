@@ -16,11 +16,12 @@ const style = {
 export default function StudentCardList({ students }) {
     return (
         <Box sx={style.root}>
-            
+
             {students.map((student) => {
-                if(student.id < 5){
+                if (student.id < 5) {
                     return <Flashcard student={student} key={student.id} />
-                }
+                } else
+                    return null;
             })}
         </Box>
     )

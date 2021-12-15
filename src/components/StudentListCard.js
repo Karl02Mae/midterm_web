@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { ReactComponent as RoundedAvatar } from '../assets/svg/RoundProfile.svg';
-import aldrin from "../assets/img/aldrin.png";
 import {
     Box,
     Typography,
     Rating,
     Avatar,
 } from "@mui/material";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const style = {
     root: {
@@ -79,7 +77,7 @@ const style = {
 
 export default function StudentListCard({ student }) {
     const [value, setValue] = useState(0);
-    
+
     if (window.innerWidth > 800) {
         return (
             <Box sx={style.root}>
@@ -87,7 +85,7 @@ export default function StudentListCard({ student }) {
                     <Typography sx={style.numbering}>{student.id}</Typography>
                     <Box sx={style.avatarCont}>
                         <Avatar sx={style.avatar} variant="rounded">
-                            <img src={student.img} height="38px" width="38px" />
+                            <img src={student.img} height="38px" width="38px" alt="" />
                         </Avatar>
                     </Box>
                     <Link to={{

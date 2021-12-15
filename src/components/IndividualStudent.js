@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { ReactComponent as RoundedAvatar } from '../assets/svg/RoundProfile.svg';
+import React, { useState } from 'react';
 import {
     Box,
     Typography,
@@ -94,7 +93,6 @@ const style = {
     },
     right__text__text: {
         fontSize: '12px',
-        fontWeight: '400',
         paddingBottom: 1,
         color: "white",
         fontWeight: '500',
@@ -120,13 +118,13 @@ const style = {
         height: '95px',
         width: '95px',
     },
-    rateValues:{
+    rateValues: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'right',
         textAlign: 'left',
         marginLeft: 4,
-       
+
     },
     rateValue: {
         fontSize: '12px',
@@ -152,7 +150,7 @@ export default function IndividualStudent() {
         <Box sx={style.root} >
             <Box sx={style.stud__Profile} >
                 <Avatar sx={style.avatar} variant="rounded">
-                    <img src={students.img} height="120px" width="150px" />
+                    <img src={students.img} height="120px" width="150px" alt="" />
                 </Avatar>
                 <Rating name="totalRate"
                     value={value}
@@ -224,12 +222,12 @@ export default function IndividualStudent() {
                         </Typography>
                     </Box>
                     <Box sx={style.right__text} >
-                        
+
                         <Typography sx={style.right__text__text}>
-                            Teamwork: 
+                            Teamwork:
                         </Typography>
                         <Typography sx={style.right__text__text}>
-                            Creativity: 
+                            Creativity:
                         </Typography>
                         <Typography sx={style.right__text__text}>
                             Adaptability:
@@ -241,15 +239,15 @@ export default function IndividualStudent() {
                             Persuasion:
                         </Typography>
                     </Box>
-                        <Box sx={style.rateValues}> 
-                         <Typography sx={style.rateValue}>{students.teamwork}</Typography>
-                         <Typography sx={style.rateValue}>{students.creativity}</Typography>
-                         <Typography sx={style.rateValue}>{students.adaptability}</Typography>
-                         <Typography sx={style.rateValue}>{students.leadership}</Typography>
-                         <Typography sx={style.rateValue}>{students.persuasion}</Typography>
-                        </Box>
-                        
-                    
+                    <Box sx={style.rateValues}>
+                        <Typography sx={style.rateValue}>{students.teamwork}</Typography>
+                        <Typography sx={style.rateValue}>{students.creativity}</Typography>
+                        <Typography sx={style.rateValue}>{students.adaptability}</Typography>
+                        <Typography sx={style.rateValue}>{students.leadership}</Typography>
+                        <Typography sx={style.rateValue}>{students.persuasion}</Typography>
+                    </Box>
+
+
                 </Box>
                 <Box sx={style.stud__Details__SocialMedia}>
                     <Typography sx={style.Social}>

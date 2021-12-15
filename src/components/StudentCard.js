@@ -42,30 +42,30 @@ export default function StudentCard({ student }) {
     console.log(student);
     const [value, setValue] = useState(0);
     if (window.innerWidth > 800) {
-    return (
-        <Box sx={style.root}>
-            <Box sx={style.left}>
-                <Avatar sx={style.avatar} variant="rounded">
-                    <img src={student.img} height="40px" width="40px" />
-                </Avatar>
+        return (
+            <Box sx={style.root}>
+                <Box sx={style.left}>
+                    <Avatar sx={style.avatar} variant="rounded">
+                        <img src={student.img} height="40px" width="40px" alt="" />
+                    </Avatar>
+                </Box>
+                <Box sx={style.right}>
+                    <Typography sx={style.name}>{student.name}</Typography>
+                    <Typography>{student.reviews} reviews</Typography>
+                    <Typography component="legend"></Typography>
+                    <Rating name="totalRate"
+                        value={student.rating}
+                        onChange={(event, newValue) => {
+                            setValue(newValue);
+                        }}
+                        sx={{ color: "#26CE8D" }}
+                        precision={0.5}
+                        readOnly
+                    />
+                    {console.log(value)}
+                </Box>
             </Box>
-            <Box sx={style.right}>
-                <Typography sx={style.name}>{student.name}</Typography>
-                <Typography>{student.reviews} reviews</Typography>
-                <Typography component="legend"></Typography>
-                <Rating name="totalRate"
-                    value={student.rating}
-                    onChange={(event, newValue) => {
-                        setValue(newValue);
-                    }}
-                    sx={{ color: "#26CE8D" }}
-                    precision={0.5}
-                    readOnly
-                />
-                {console.log(value)}
-            </Box>
-        </Box>
-    );
+        );
     } else if (window.innerWidth <= 800) {
         return (
             <h1>TRY</h1>
