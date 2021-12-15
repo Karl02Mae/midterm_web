@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactComponent as RoundedAvatar } from '../assets/svg/RoundProfile.svg';
 import {
     Box,
@@ -6,8 +6,9 @@ import {
     Avatar,
     Rating
 } from '@mui/material';
-
-
+import { useParams, useLocation } from "react-router-dom"
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../utils/firebase';
 
 const style = {
     root: {
@@ -118,9 +119,19 @@ const style = {
 }
 
 export default function IndividualStudent() {
+    const [value, setValue] = useState(0);
+    const  [students, setStudents] = useState();
+    const location = useLocation();
+    const {id} = useParams();
+    
+    useEffect(() => {
 
-    const [value, setValue] = useState('');
+    }, []);
 
+
+    console.log( "kardinf", useParams());
+
+ 
     return (
         <Box sx={style.root} >
             <Box sx={style.stud__Profile} >
@@ -150,6 +161,7 @@ export default function IndividualStudent() {
                     </Typography>
                 </Box>
             </Box>
+
             <Box sx={style.stud__Details} >
                 <Box sx={style.stud__Details__name}>
                     <Typography sx={style.stud__Details__nameText}>
@@ -180,7 +192,7 @@ export default function IndividualStudent() {
                     {/* ALL TEXT IN STUD__DETAILS__MIDDLE should be replaced by data from array */}
                     <Box sx={style.stud__Details__middle}>
                         <Typography sx={style.data}>
-                            Male
+                            
                         </Typography>
                         <Typography sx={style.data}>
                             May 3, 2000

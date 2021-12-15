@@ -13,11 +13,14 @@ const style = {
     },
 }
 
-export default function StudentCardList({ studentcards }) {
+export default function StudentCardList({ students }) {
     return (
         <Box sx={style.root}>
-            {studentcards.map(studentcard => {
-                return <Flashcard studentcard={studentcard} key={studentcard.id} />
+            
+            {students.map((student) => {
+                if(student.id < 5){
+                    return <Flashcard student={student} key={student.id} />
+                }
             })}
         </Box>
     )

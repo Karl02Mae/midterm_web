@@ -35,7 +35,8 @@ const style = {
 
 }
 
-export default function StudentCard({ studentcard }) {
+export default function StudentCard({ student }) {
+    console.log(student);
     const [value, setValue] = useState(0);
     return (
         <Box sx={style.root}>
@@ -45,11 +46,11 @@ export default function StudentCard({ studentcard }) {
                 </Avatar>
             </Box>
             <Box sx={style.right}>
-                <Typography sx={style.name}>{studentcard.name}</Typography>
-                <Typography>{studentcard.reviews} reviews</Typography>
+                <Typography sx={style.name}>{student.name}</Typography>
+                <Typography>{student.reviews} reviews</Typography>
                 <Typography component="legend"></Typography>
                 <Rating name="totalRate"
-                    value={studentcard.rating}
+                    value={student.rating}
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Typography
 } from '@mui/material';
 import { Helmet } from 'react-helmet';
+import { db } from "../utils/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 import StudentCardList from "../components/StudentCardList";
 import StudentList from './StudentList';
@@ -43,10 +45,18 @@ const style = {
 }
 
 export default function Home() {
-    const [studentcards, setStudentcards] = useState(STUDENT_INFO);
-    const [fullStudentCards, setFullStudentCards] = useState(STUDENT_INFOS);
-    console.log(setStudentcards);
-    console.log(setFullStudentCards);
+    //const [studentcards, setStudentcards] = useState(STUDENT_INFO);
+    const  [students, setStudents] = useState([]);
+    const usersCollectionRef = collection(db, "students");
+    useEffect (() => {
+        const getStudent = async () => {
+            const data = await getDocs(usersCollectionRef);
+            setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        } 
+        getStudent();
+    }, []);
+
+
     return (
         <Box sx={style.root}>
 
@@ -76,15 +86,10 @@ export default function Home() {
 
             <Box sx={style.topStudentContainer}>
                 <Typography sx={style.textTopStudent}> Top Student </Typography>
-                <StudentCardList studentcards={studentcards} />
+                <StudentCardList students={students} />
             </Box>
-
-            <Box sx={style.studentListContainer}>
-
-            </Box>
-
             <Box>
-                <StudentList fullStudentCards={fullStudentCards} />
+                <StudentList students={students} />
             </Box>
 
 
@@ -94,114 +99,3 @@ export default function Home() {
 }
 
 
-const STUDENT_INFOS = [
-
-    {
-        id: 1,
-        name: 'Karl Samelo',
-        yns: 'BSIT4A',
-        gender: 'Male',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        reviews: 35,
-    },
-    {
-        id: 2,
-        name: 'Sara Patatas',
-        yns: 'BSIT4A',
-        gender: 'Female',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        reviews: 36,
-    },
-    {
-        id: 3,
-        name: 'Arriane Baredo',
-        yns: 'BSIT4A',
-        gender: 'Female',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        reviews: 33,
-    },
-    {
-        id: 4,
-        name: 'Junnie Adriano',
-        yns: 'BSIT4A',
-        gender: 'Male',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        reviews: 45,
-    },
-    {
-        id: 5,
-        name: 'Mae Limas',
-        yns: 'BSIT4A',
-        gender: 'Female',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        reviews: 38,
-    },
-]
-
-const STUDENT_INFO = [
-
-    {
-        id: 1,
-        name: 'Karl Samelo',
-        yns: 'BSIT4A',
-        gender: 'Male',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        rating: 3.5,
-        reviews: 25,
-    },
-    {
-        id: 2,
-        name: 'Junnie Adriano',
-        yns: 'BSIT4A',
-        gender: 'Male',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        rating: 4.5,
-        reviews: 30,
-
-    },
-    {
-        id: 3,
-        name: 'Arriane Baredo',
-        yns: 'BSIT4A',
-        gender: 'Female',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        rating: 3.0,
-        reviews: 22,
-    },
-    {
-        id: 4,
-        name: 'Sara Patatas',
-        yns: 'BSIT4A',
-        gender: 'Female',
-        birthday: '',
-        address: '',
-        nickname: '',
-        skills: '',
-        rating: 3.0,
-        reviews: 20,
-    },
-]

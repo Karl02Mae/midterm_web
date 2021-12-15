@@ -5,8 +5,8 @@ import {
     Typography,
     Rating,
     Avatar,
-    Link,
 } from "@mui/material";
+import {Link} from "react-router-dom";
 
 const style = {
     root: {
@@ -72,25 +72,29 @@ const style = {
     }
 }
 
-export default function StudentListCard({ fullStudentCards }) {
+export default function StudentListCard({ student }) {
     const [value, setValue] = useState(0);
+    
     if (window.innerWidth > 800) {
         return (
             <Box sx={style.root}>
                 <Box sx={style.left}>
-                    <Typography sx={style.numbering}>{fullStudentCards.id}</Typography>
+                    <Typography sx={style.numbering}>{student.id}</Typography>
                     <Box sx={style.avatarCont}>
                         <Avatar sx={style.avatar} variant="rounded">
                             <RoundedAvatar />
                         </Avatar>
                     </Box>
-                    <Link href="/studentevaluation" underline="none">
-                        <Typography sx={style.name}>{fullStudentCards.name}</Typography>
+                    <Link to={{
+                        pathname: `/studentevaluation/${student.id}`,
+                        state: { ...student }
+                    }} underline="none">
+                        <Typography sx={style.name}>{student.name}</Typography>
                     </Link>
                 </Box>
                 <Box sx={style.right}>
-                    <Typography sx={style.YnS}>{fullStudentCards.yns}</Typography>
-                    <Typography sx={style.reviews}>{fullStudentCards.reviews}</Typography>
+                    <Typography sx={style.YnS}>{student.yns}</Typography>
+                    <Typography sx={style.reviews}>{student.reviews}</Typography>
                     <Rating sx={style.ratings} name="totalRate"
                         value={value}
                         onChange={(event, newValue) => {

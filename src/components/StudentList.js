@@ -82,7 +82,7 @@ const style = {
     label: {
         display: 'flex',
         flexDirection: 'row',
-        paddingLeft: 50,
+        marginLeft: 51,
         paddingBottom: 3,
     },
     labelYnS: {
@@ -104,7 +104,7 @@ const style = {
     }
 }
 
-export default function StudentList({ fullStudentCards }) {
+export default function StudentList({ students }) {
     return (
         <Box sx={style.root}>
             <Box sx={style.root2}>
@@ -141,8 +141,8 @@ export default function StudentList({ fullStudentCards }) {
                         <Typography sx={style.labelReviews}>Reviews</Typography>
                         <Typography sx={style.labelRatings}>Ratings</Typography>
                     </Box>
-                    {fullStudentCards.map(fullStudentCards => {
-                        return <StudentListCard fullStudentCards={fullStudentCards} key={fullStudentCards.id} />
+                    {students.map(student => {
+                        return <StudentListCard student={student} key={student.id} />
                     })}
                 </Box>
             </Box>
