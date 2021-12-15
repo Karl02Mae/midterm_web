@@ -43,7 +43,7 @@ export default function StudentCard({ student }) {
         <Box sx={style.root}>
             <Box sx={style.left}>
                 <Avatar sx={style.avatar} variant="rounded">
-                    <img src={student.img} height="38px" width="38px" />
+                    <img src={student.img} height="40px" width="40px" />
                 </Avatar>
             </Box>
             <Box sx={style.right}>

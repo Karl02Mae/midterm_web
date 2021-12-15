@@ -115,16 +115,18 @@ export default function IndividualStudentList() {
                 <Typography sx={style.addYourRating}>
                     Add your rating
                 </Typography>
-                <Rating
-                    
-                    value={value}
-                    size="large"
-                    onChange={(event, newValue) => {
-                        setValue(newValue);
-                    }}
-                    onClick={() => setShow(true)}
-                    sx={{ color: "#26CE8D" }}
-                />
+                <Box onClick={() => setShow(true)}>
+                    <Rating
+                        readOnly
+                        value={value}
+                        size="large"
+                        onChange={(event, newValue) => {
+                            setValue(newValue);
+                        }}
+                        sx={{ color: "#26CE8D" }}
+                    />
+                </Box>
+                
             </Box>
             <RatingBox onClose={() => setShow(false)} show={show} />
             <Box sx={style.commentSection}>

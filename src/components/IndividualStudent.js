@@ -157,6 +157,7 @@ export default function IndividualStudent() {
                     onChange={(event, newValue) => {
                         setValue(newValue);
                     }}
+                    readOnly
                 />
                 <Box sx={style.stud__Profile__text}>
                     {/* value at the bottom should be replaced by Data from array */}

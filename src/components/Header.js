@@ -55,7 +55,10 @@ const style = {
         fontWeight: 600,
         paddingLeft: 4,
         paddingRight: 4,
-        fontSize: "14px",
+        fontSize: {
+            xs: "10px",
+            sm: "14px",
+        },
         "&:hover": {
             color: "#26CE8D",
         },
