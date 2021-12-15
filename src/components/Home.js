@@ -33,7 +33,7 @@ const style = {
         display: "flex",
         alignItems: "center",
         textAlign: "center",
-        marginLeft: 7.5,
+        marginLeft: 10,
         marginBottom: 2,
     },
 

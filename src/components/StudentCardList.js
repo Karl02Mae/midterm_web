@@ -6,7 +6,7 @@ const style = {
     root: {
         display: "flex",
         flexDirection: "row",
-        marginLeft: "30px",
+        marginLeft: "68px",
         marginRight: '30px',
         flexWrap: 'wrap',
         paddingBottom: 2,

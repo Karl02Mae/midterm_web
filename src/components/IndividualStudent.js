@@ -7,8 +7,7 @@ import {
     Rating
 } from '@mui/material';
 import { useParams, useLocation } from "react-router-dom"
-import { collection, getDocs } from "firebase/firestore";
-import { db } from '../utils/firebase';
+
 
 const style = {
     root: {
