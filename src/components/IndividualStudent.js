@@ -6,7 +6,8 @@ import {
     Avatar,
     Rating
 } from '@mui/material';
-import { useParams, useLocation } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { db } from '../utils/firebase';
 
 
 const style = {
@@ -119,18 +120,11 @@ const style = {
 
 export default function IndividualStudent() {
     const [value, setValue] = useState(0);
-    const  [students, setStudents] = useState();
-    const location = useLocation();
-    const {id} = useParams();
-    
-    useEffect(() => {
+    const [students, setStudents] = useState('');
+    const { id } = useParams();
 
-    }, []);
+    db.collection('students').doc(id).get().then(snapshot => setStudents(snapshot.data()));
 
-
-    console.log( "kardinf", useParams());
-
- 
     return (
         <Box sx={style.root} >
             <Box sx={style.stud__Profile} >
@@ -146,7 +140,6 @@ export default function IndividualStudent() {
                 <Box sx={style.stud__Profile__text}>
                     {/* value at the bottom should be replaced by Data from array */}
                     <Typography>
-                        3.0
                     </Typography>
                     <Typography sx={style.stud__Profile__text__Rating}>
                         Overall Rating
@@ -164,10 +157,10 @@ export default function IndividualStudent() {
             <Box sx={style.stud__Details} >
                 <Box sx={style.stud__Details__name}>
                     <Typography sx={style.stud__Details__nameText}>
-                        Samelo, Karl Christopher DC.
+                        {students.name}
                     </Typography>
                     <Typography sx={style.stud__Details__section}>
-                        BSIT 4A
+                        {students.yns}
                     </Typography>
                 </Box>
                 <Box sx={style.stud__Details__Details} >
@@ -191,19 +184,19 @@ export default function IndividualStudent() {
                     {/* ALL TEXT IN STUD__DETAILS__MIDDLE should be replaced by data from array */}
                     <Box sx={style.stud__Details__middle}>
                         <Typography sx={style.data}>
-                            
+                            {students.gender}
                         </Typography>
                         <Typography sx={style.data}>
-                            May 3, 2000
+                            {students.birthday}
                         </Typography>
                         <Typography sx={style.data}>
-                            Vizal Santo Cristo, Candaba, Pampanga
+                            {students.address}
                         </Typography>
                         <Typography sx={style.data}>
-                            Karl
+                            {students.nickname}
                         </Typography>
                         <Typography sx={style.data}>
-                            Javascript, HTML, CSS
+                            {students.skills}
                         </Typography>
                     </Box>
                     <Box sx={style.stud__Details__right} >

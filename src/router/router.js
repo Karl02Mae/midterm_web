@@ -13,8 +13,8 @@ export default function RouterComponent() {
         <Router>
             <Header />
             <Switch>
-                <Route component={Home} path="/" exact/>
-                <Route component={StudentEvaluation} path="/studentevaluation" />
+                <Route component={Home} path="/" exact />
+                <Route component={StudentEvaluation} path="/studentevaluation/:id" />
             </Switch>
             <Footer />
         </Router>

@@ -20,7 +20,7 @@ const style = {
 
     // ****** TOP STUDENT ******
     topStudentContainer: {
-        paddingLeft: 11,
+        paddingLeft: 6,
         paddingTop: 3,
         paddingBottom: 5,
         marginLeft: 4,
