@@ -31,6 +31,9 @@ const style = {
     avatar: {
         marginRight: "10px",
         marginBottom: "30px",
+        borderStyle: "solid",
+        borderWidth: "thin",
+        borderColor: "#e8e8e8",
     }
 
 }

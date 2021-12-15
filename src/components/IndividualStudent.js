@@ -113,6 +113,8 @@ const style = {
         height: '100px',
         width: '100px',
         marginBottom: 1,
+        borderStyle: "solid",
+        borderColor: "#e8e8e8",
     },
     avatarInner: {
         height: '95px',
@@ -164,7 +166,7 @@ export default function IndividualStudent() {
                     <Typography>
                     </Typography>
                     <Typography sx={style.stud__Profile__text__Rating}>
-                        Overall Rating
+                        {students.reviews} Overall Rating
                     </Typography>
                     {/* value at the bottom should be replaced by Data from array */}
                     <Typography>

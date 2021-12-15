@@ -71,6 +71,9 @@ const style = {
     avatar: {
         height: '37.33px',
         width: '37.33px',
+        borderStyle: "solid",
+        borderWidth: "thin",
+        borderColor: "#e8e8e8",
     }
 }
 
