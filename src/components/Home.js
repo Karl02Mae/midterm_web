@@ -20,10 +20,9 @@ const style = {
 
     // ****** TOP STUDENT ******
     topStudentContainer: {
-        paddingLeft: 6,
+        paddingLeft: 4.5,
         paddingTop: 3,
         paddingBottom: 5,
-        marginLeft: 4,
         marginRight: 'auto',
     },
     textTopStudent: {
@@ -46,13 +45,13 @@ const style = {
 
 export default function Home() {
     //const [studentcards, setStudentcards] = useState(STUDENT_INFO);
-    const  [students, setStudents] = useState([]);
+    const [students, setStudents] = useState([]);
     const usersCollectionRef = collection(db, "students");
-    useEffect (() => {
+    useEffect(() => {
         const getStudent = async () => {
             const data = await getDocs(usersCollectionRef);
             setStudents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        } 
+        }
         getStudent();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -84,13 +83,13 @@ export default function Home() {
                 />
             </Helmet>
 
-            <Box sx={style.topStudentContainer}>
+            <center><Box sx={style.topStudentContainer}>
                 <Typography sx={style.textTopStudent}> Top Student </Typography>
                 <StudentCardList students={students} />
-            </Box>
-            <Box>
+            </Box></center>
+            <center><Box>
                 <StudentList students={students} />
-            </Box>
+            </Box></center>
 
 
         </Box>
