@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ReactComponent as RoundedAvatar } from '../assets/svg/RoundProfile.svg';
 import {
     Box,
     Typography,
@@ -31,6 +30,7 @@ const style = {
     },
     avatar: {
         marginRight: "10px",
+        marginBottom: "30px",
     }
 
 }
@@ -38,11 +38,12 @@ const style = {
 export default function StudentCard({ student }) {
     console.log(student);
     const [value, setValue] = useState(0);
+    if (window.innerWidth > 800) {
     return (
         <Box sx={style.root}>
             <Box sx={style.left}>
                 <Avatar sx={style.avatar} variant="rounded">
-                    <RoundedAvatar />
+                    <img src={student.img} height="38px" width="38px" />
                 </Avatar>
             </Box>
             <Box sx={style.right}>
@@ -62,4 +63,9 @@ export default function StudentCard({ student }) {
             </Box>
         </Box>
     );
+    } else if (window.innerWidth <= 800) {
+        return (
+            <h1>TRY</h1>
+        );
+    }
 }

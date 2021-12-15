@@ -75,27 +75,29 @@ const style = {
     },
     stud__Details__text: {
         fontSize: '12px',
-        fontWeight: '400',
+        fontWeight: '500',
         paddingBottom: 1,
+        color: "white",
     },
     data: {
-        color: '#D1D4C9',
         fontSize: '12px',
         fontWeight: '400',
         paddingBottom: 1,
+        color: "#cbccc6",
     },
-    stud__Details__right: {
+    right__text: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'right',
         textAlign: 'left',
-        paddingLeft: 10,
+        marginLeft: 10,
     },
     right__text__text: {
-        color: '#D1D4C9',
         fontSize: '12px',
         fontWeight: '400',
         paddingBottom: 1,
+        color: "white",
+        fontWeight: '500',
     },
     stud__Details__SocialMedia: {
         display: 'flex',
@@ -115,6 +117,25 @@ const style = {
     avatarInner: {
         height: '95px',
         width: '95px',
+    },
+    rateValues:{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'right',
+        textAlign: 'left',
+        marginLeft: 4,
+       
+    },
+    rateValue: {
+        fontSize: '12px',
+        color: "white",
+        paddingBottom: 1,
+        width: "25px",
+        height: "12px",
+        borderRadius: "4px",
+        backgroundColor: "#26CE8D",
+        margin: "3px",
+        textAlign: "center",
     }
 }
 
@@ -129,7 +150,7 @@ export default function IndividualStudent() {
         <Box sx={style.root} >
             <Box sx={style.stud__Profile} >
                 <Avatar sx={style.avatar} variant="rounded">
-                    <RoundedAvatar sx={style.avatarInner} />
+                    <img src={students.img} height="120px" width="150px" />
                 </Avatar>
                 <Rating name="totalRate"
                     value={value}
@@ -199,28 +220,33 @@ export default function IndividualStudent() {
                             {students.skills}
                         </Typography>
                     </Box>
-                    <Box sx={style.stud__Details__right} >
-                        <Box sx={style.right__text}>
-                            <Typography sx={style.right__text__text}>
-                                Teamwork:
-                            </Typography>
-                            <Typography sx={style.right__text__text}>
-                                Creativity:
-                            </Typography>
-                            <Typography sx={style.right__text__text}>
-                                Adaptability:
-                            </Typography>
-                            <Typography sx={style.right__text__text}>
-                                Leadership:
-                            </Typography>
-                            <Typography sx={style.right__text__text}>
-                                Persuasion:
-                            </Typography>
-                        </Box>
-                        <Box sx={style.right__data}>
-
-                        </Box>
+                    <Box sx={style.right__text} >
+                        
+                        <Typography sx={style.right__text__text}>
+                            Teamwork: 
+                        </Typography>
+                        <Typography sx={style.right__text__text}>
+                            Creativity: 
+                        </Typography>
+                        <Typography sx={style.right__text__text}>
+                            Adaptability:
+                        </Typography>
+                        <Typography sx={style.right__text__text}>
+                            Leadership:
+                        </Typography>
+                        <Typography sx={style.right__text__text}>
+                            Persuasion:
+                        </Typography>
                     </Box>
+                        <Box sx={style.rateValues}> 
+                         <Typography sx={style.rateValue}>{students.teamwork}</Typography>
+                         <Typography sx={style.rateValue}>{students.creativity}</Typography>
+                         <Typography sx={style.rateValue}>{students.adaptability}</Typography>
+                         <Typography sx={style.rateValue}>{students.leadership}</Typography>
+                         <Typography sx={style.rateValue}>{students.persuasion}</Typography>
+                        </Box>
+                        
+                    
                 </Box>
                 <Box sx={style.stud__Details__SocialMedia}>
                     <Typography sx={style.Social}>

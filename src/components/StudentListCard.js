@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ReactComponent as RoundedAvatar } from '../assets/svg/RoundProfile.svg';
+import aldrin from "../assets/img/aldrin.png";
 import {
     Box,
     Typography,
@@ -35,7 +36,8 @@ const style = {
         fontSize: '18px',
         fontWeight: '400',
         paddingLeft: 2,
-        color: "white"
+        color: "white",
+        textDecoration: "none",
     },
     left: {
         display: 'flex',
@@ -82,14 +84,14 @@ export default function StudentListCard({ student }) {
                     <Typography sx={style.numbering}>{student.id}</Typography>
                     <Box sx={style.avatarCont}>
                         <Avatar sx={style.avatar} variant="rounded">
-                            <RoundedAvatar />
+                            <img src={student.img} height="38px" width="38px" />
                         </Avatar>
                     </Box>
                     <Link to={{
                         pathname: `/studentevaluation/${student.id}`,
                         state: { ...student }
-                    }} underline="none">
-                        <Typography sx={style.name}>{student.name}</Typography>
+                    }} style={{ textDecoration: 'none' }}>
+                        <Typography sx={style.name} >{student.name}</Typography>
                     </Link>
                 </Box>
                 <Box sx={style.right}>

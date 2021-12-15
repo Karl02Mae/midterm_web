@@ -99,9 +99,9 @@ export default function Header() {
                         <Link href="/" underline="none">
                             <Typography sx={style.tabReview}> Student List </Typography>
                         </Link>
-                        <Link href="/studentevaluation" underline="none">
+                     
                             <Typography sx={style.tabReview}> Student Evaluation </Typography>
-                        </Link>
+                      
                         <Link href="#" underline="none">
                             <Typography sx={style.tabReview}> Blog </Typography>
                         </Link>

@@ -116,6 +116,7 @@ export default function IndividualStudentList() {
                     Add your rating
                 </Typography>
                 <Rating
+                    
                     value={value}
                     size="large"
                     onChange={(event, newValue) => {
